@@ -6,13 +6,13 @@
 # © Klaas Schoute
 #
 substitutions:
-  device_name: home-assistant-glow
-  friendly_name: Home Assistant Glow
+  device_name: powermeter
+  friendly_name: powermeter
   project_version: "4.2.3"
   device_description: "Measure your energy consumption with the pulse LED on your smart meter - ESP32 Generic"
 
   # Define the GPIO pins
-  pulse_pin: GPIO26
+  pulse_pin: GPIO12
   status_led: GPIO5
   led_pin_red: GPIO2
   led_pin_green: GPIO4

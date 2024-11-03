@@ -64,7 +64,7 @@ sensor:
     filters:
       # multiply value = (60 / imp value) * 1000
       # - multiply: 60
-      - lambda: return x * max(((60.0 / id(select_pulse_rate).state) * 1000.0),25000);
+      - lambda: return x * max(((60.0 / id(select_pulse_rate).state) * 1000.0),25000.0);
 
     total:
       id: sensor_total_energy

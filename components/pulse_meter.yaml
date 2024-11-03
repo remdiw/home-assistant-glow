@@ -54,17 +54,17 @@ sensor:
     icon: mdi:flash-outline
     accuracy_decimals: 0
     pin: ${pulse_pin}
-    on_raw_value:
-      then:
-        - light.turn_on:
-            id: led_red
-        - delay: 0.2s
-        - light.turn_off:
-            id: led_red
+    #on_raw_value:
+    #  then:
+    #    - light.turn_on:
+    #        id: led_red
+    #    - delay: 0.2s
+    #    - light.turn_off:
+    #        id: led_red
     filters:
       # multiply value = (60 / imp value) * 1000
       # - multiply: 60
-      - lambda: return x * ((60.0 / id(select_pulse_rate).state) * 1000.0);
+      - lambda: return x * max(((60.0 / id(select_pulse_rate).state) * 1000.0),25000);
 
     total:
       id: sensor_total_energy

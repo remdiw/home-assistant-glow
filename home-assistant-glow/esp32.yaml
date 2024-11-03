@@ -17,6 +17,9 @@ substitutions:
   status_led: GPIO5
   led_pin_red: GPIO2
   led_pin_green: GPIO4
+  status_led: GPIO14
+  led_pin_red: GPIO15
+  led_pin_green: GPIO16
 
 esphome:
   name: '${device_name}'
@@ -29,6 +32,7 @@ esphome:
 
 dashboard_import:
   package_import_url: github://klaasnicolaas/home-assistant-glow/home-assistant-glow/esp32.yaml@main
+  package_import_url: github://remdiw/home-assistant-glow/home-assistant-glow/esp32.yaml@main
 
 esp32:
   board: esp32dev
@@ -38,6 +42,7 @@ esp32:
 packages:
   remote_package:
     url: https://github.com/klaasnicolaas/home-assistant-glow/
+    url: https://github.com/remdiw/home-assistant-glow/
     ref: "4.2.3"
     files:
       - components/basis.yaml
